@@ -21,12 +21,12 @@ class Subscription(models.Model):
     user = models.ForeignKey(
         'auth.User',
         verbose_name=_('User'),
-        related_name='subscriptions',
+        related_name='syndications',
     )
 
     content_type = models.ForeignKey(
         ContentType,
-        related_name='subscribed',
+        related_name='syndicated',
     )
     object_id = models.PositiveIntegerField()
     content_object = generic.GenericForeignKey('content_type', 'object_id')
